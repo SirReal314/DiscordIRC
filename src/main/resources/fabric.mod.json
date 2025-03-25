@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "discordirc",
+	"version": "${version}",
+	"name": "Discord IRC",
+	"description": "Client-side Discord Integration",
+	"authors": [
+		"Sir Real"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"icon": "assets/discordirc/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"me.sirreal.discordirc.DiscordIRCClient"
+		],
+		"modmenu": [
+			"me.sirreal.discordirc.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"discordirc.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
