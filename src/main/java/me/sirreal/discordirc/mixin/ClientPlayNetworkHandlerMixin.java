@@ -17,8 +17,8 @@ public class ClientPlayNetworkHandlerMixin {
     // Intercept sending a chat message to the server
     @Inject(method = "sendChatMessage", at = @At("HEAD"), cancellable = true)
     private void onSendChatMessage(String message, CallbackInfo ci) {
-        if (GlobalChatCommand.suppressNextMessage) {
-            GlobalChatCommand.suppressNextMessage = false;
+        if (GlobalChatCommand.isGlobalMessage) {
+            GlobalChatCommand.isGlobalMessage = false;
             return;
         }
         if (Config.modEnabled && Config.mcToDcEnabled) {
