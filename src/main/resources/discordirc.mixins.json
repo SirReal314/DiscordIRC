@@ -10,7 +10,6 @@
   "client": [
     "ClientPlayNetworkHandlerMixin",
     "DeathScreenAccessor",
-    "MessageHandlerMixin",
     "MinecraftClientMixin",
     "ScreenshotRecorderMixin"
   ]
