@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ClientPlayNetworkHandler.class)
+@Mixin(value = ClientPlayNetworkHandler.class, priority = 2000)
 public class ClientPlayNetworkHandlerMixin {
     // Intercept sending a chat message to the server
     @Inject(method = "sendChatMessage", at = @At("HEAD"), cancellable = true)

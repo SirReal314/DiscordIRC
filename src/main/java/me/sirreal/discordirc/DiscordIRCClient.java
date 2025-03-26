@@ -1,5 +1,6 @@
 package me.sirreal.discordirc;
 
+import me.sirreal.discordirc.commands.ScreenshotCommand;
 import me.sirreal.discordirc.handlers.ChatHandler;
 import me.sirreal.discordirc.commands.GlobalChatCommand;
 import me.sirreal.discordirc.config.Config;
@@ -21,11 +22,9 @@ public class DiscordIRCClient implements ClientModInitializer {
         Config.loadConfig();
         WebSocketHandler.initialize();
 
-        System.out.println("DiscordIRC Mod loaded successfully!");
-
         ClientCommandRegistrationCallback.EVENT.register(GlobalChatCommand::register);
+        ClientCommandRegistrationCallback.EVENT.register(ScreenshotCommand::register);
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-        });
+        System.out.println("DiscordIRC Mod loaded successfully!");
     }
 }

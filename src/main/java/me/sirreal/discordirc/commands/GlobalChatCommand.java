@@ -32,6 +32,6 @@ public class GlobalChatCommand {
             suppressNextMessage = true;
         }
         MinecraftClient.getInstance().player.networkHandler.sendChatMessage(msg);
-        return 0;
+        return 1;
     }
 }
